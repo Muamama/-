@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}登入{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漫畫論壇登入</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm">
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">登入漫畫論壇</h1>
+    <form method="POST" action="{% url 'login_view' %}">
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+        <div class="text-red-600 text-sm mb-2">{{ form.non_field_errors }}</div>
+      {% endif %}
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">帳號</label>
+        {{ form.username }}
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">密碼</label>
+        {{ form.password }}
+      </div>
+      <div class="flex justify-between text-sm text-gray-500 mb-4">
+        <a href="#" class="hover:underline">忘記密碼</a>
+        <a href="{% url 'register_view' %}" class="hover:underline">創建帳號</a>
+      </div>
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md">登入</button>
+    </form>
+
+    <div class="mt-6 text-center text-gray-500 text-sm">── 其他登入方式 ──</div>
+    <div class="flex justify-center space-x-4 mt-4">
+      <button class="bg-green-400 p-2 rounded-full"><img src="https://img.icons8.com/color/48/line-me.png" alt="LINE" class="w-6 h-6"></button>
+      <button class="bg-white p-2 rounded-full border"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" class="w-6 h-6"></button>
+      <button class="bg-blue-600 p-2 rounded-full"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" class="w-6 h-6"></button>
+      <button class="bg-indigo-500 p-2 rounded-full"><img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord" class="w-6 h-6"></button>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

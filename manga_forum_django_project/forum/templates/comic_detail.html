@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}漫畫資訊{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漫畫論壇 - 作品介紹</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <main class="max-w-2xl mx-auto py-6 px-4">
+    <!-- 作品資訊 -->
+    <div class="bg-white shadow rounded-lg p-4 flex gap-4">
+      <img src="/static/images/gurazeni.jpg" alt="腦大黨" class="w-32 h-44 object-cover rounded">
+      <div>
+        <h1 class="text-2xl font-bold mb-1">膽大黨</h1>
+        <div class="flex items-center gap-2 text-yellow-400 mb-2">
+          <span>★★★★★</span>
+        </div>
+        <p class="text-sm text-gray-600">更新至：第195話</p>
+        <p class="text-sm text-gray-600">更新時間：2025-05-20</p>
+        <p class="text-sm text-gray-600">作者：龍年伸</p>
+        <p class="text-sm text-gray-600 mb-3">分類：科幻, 愛情, 神鬼, 校園</p>
+        <span class="inline-block bg-green-500 text-white text-xs px-2 py-1 rounded">在連載中</span>
+      </div>
+    </div>
+
+    <!-- 推薦介紹 -->
+    <section class="mt-6 bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold mb-2">推薦介紹</h2>
+      <p class="text-gray-700 text-sm leading-relaxed">
+        認為幽靈存在但不相信外星人存在，喜歡與高倉健的慈湖桃，班上有一個相信外星人存在但不相信幽靈存在的自營宅高倉健。兩人為了證明自己的世界觀，各自創作面漫畫展出，高倉健遇到恐怖戀愛，慈湖桃也捲進花呢。人要取走他人的性器官，千鈞一髮間，小桃的力量顯現，人類敗光是救贖，風起雲湧，高倉健的蛋怎少了一顆？
+      </p>
+    </section>
+
+    <!-- 留言區 -->
+    <section class="mt-6 bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold mb-2">讀者留言</h2>
+      <div class="space-y-4">
+        <div class="border-b pb-2">
+          <p class="text-sm font-semibold">ahrxoy <span class="text-gray-500 text-xs">2025-05-21 22:07</span></p>
+          <p class="text-sm">宗一!! Guru又出現了啊！！不對！！！！！</p>
+        </div>
+        <div class="border-b pb-2">
+          <p class="text-sm font-semibold">979****45 <span class="text-gray-500 text-xs">2025-05-21 14:53</span></p>
+          <p class="text-sm">編輯是不是腦袋有洞？</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">木玄 <span class="text-gray-500 text-xs">2025-05-21 13:43</span></p>
+          <p class="text-sm">太猛了這劇情</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+{% endblock %}
