@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漫畫論壇 - 發文與投票</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <main class="max-w-2xl mx-auto py-6 px-4">
+    <h1 class="text-2xl font-bold mb-4">發表新主題</h1>
+
+    <form class="bg-white shadow rounded-lg p-4 space-y-4">
+      <!-- 標題 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">標題</label>
+        <input type="text" name="title" class="w-full border px-3 py-2 rounded-md" required>
+      </div>
+
+      <!-- 內文 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">內容</label>
+        <textarea name="content" rows="5" class="w-full border px-3 py-2 rounded-md" required></textarea>
+      </div>
+
+      <!-- 匿名與截止時間 -->
+      <div class="flex gap-4">
+        <label class="inline-flex items-center text-sm">
+          <input type="checkbox" name="anonymous" class="mr-2">
+          匿名發文
+        </label>
+        <label class="text-sm">
+          截止日期：
+          <input type="date" name="deadline" class="ml-2 border px-2 py-1 rounded">
+        </label>
+      </div>
+
+      <!-- 投票選項 -->
+      <div x-data="{ options: [''] }" class="bg-gray-50 p-3 rounded">
+        <div class="flex justify-between items-center mb-2">
+          <span class="font-semibold text-sm">建立投票</span>
+          <button type="button" @click="options.push('')" class="text-blue-500 text-sm">＋ 增加選項</button>
+        </div>
+        <template x-for="(option, index) in options" :key="index">
+          <input type="text" :name="'option_' + index" x-model="options[index]" class="w-full mb-2 border px-3 py-1 rounded" placeholder="選項內容">
+        </template>
+      </div>
+
+      <!-- 提交 -->
+      <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md font-semibold">發佈主題</button>
+    </form>
+  </main>
+</body>
+</html>

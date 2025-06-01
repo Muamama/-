@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漫畫論壇 - 首頁</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="/static/images/avatar.png" alt="Avatar" class="w-10 h-10 rounded-full">
+      <span class="font-semibold text-gray-700">空-白幻</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <input type="text" placeholder="Search" class="border px-3 py-1 rounded-md text-sm focus:outline-none" />
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 推薦區塊 -->
+  <main class="p-4">
+    <section class="mb-6">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">推薦討論區</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white rounded shadow p-2 text-center">
+          <img src="/static/images/love.png" alt="愛情" class="w-full rounded mb-1">
+          <div class="text-sm font-medium">愛情</div>
+        </div>
+        <div class="bg-white rounded shadow p-2 text-center">
+          <img src="/static/images/fantasy.png" alt="科幻" class="w-full rounded mb-1">
+          <div class="text-sm font-medium">科幻</div>
+        </div>
+        <div class="bg-white rounded shadow p-2 text-center">
+          <img src="/static/images/campus.png" alt="校園" class="w-full rounded mb-1">
+          <div class="text-sm font-medium">校園</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 熱門作品區塊 -->
+    <section>
+      <h2 class="text-xl font-bold text-gray-800 mb-2">熱門作品</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <img src="/static/images/kimetsu.jpg" alt="鬼滅之刃" class="w-full h-40 object-cover">
+        </div>
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <img src="/static/images/monday.jpg" alt="星期一的豐滿" class="w-full h-40 object-cover">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
