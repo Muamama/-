@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}首頁{% endblock %}
+
+{% block content %}
+<!-- 推薦區塊 -->
+<section class="mb-6">
+  <img src="{% static 'images/123.jpg' %}" alt="首頁推薦封面" class="w-full h-auto rounded-lg shadow">
+</section>
+
+<!-- 漫畫類別選單 -->
+<div class="bg-white px-4 py-2 shadow text-sm text-gray-700 flex flex-wrap gap-3">
+  <span class="hover:text-blue-500 cursor-pointer">熱血</span>
+  <span class="hover:text-blue-500 cursor-pointer">古風</span>
+  <span class="hover:text-blue-500 cursor-pointer">玄幻</span>
+  <span class="hover:text-blue-500 cursor-pointer">都市</span>
+  <span class="hover:text-blue-500 cursor-pointer">搞笑</span>
+  <span class="hover:text-blue-500 cursor-pointer">戀愛</span>
+  <span class="hover:text-blue-500 cursor-pointer">全部</span>
+</div>
+
+<!-- 為你推薦 -->
+<div class="max-w-7xl mx-auto py-8 px-4">
+  <h2 class="text-2xl font-semibold mb-4 text-gray-800">為你推薦</h2>
+  <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+    {% for comic in recommended_comics %}
+    <a href="{% url 'comic_detail' comic.id %}" class="bg-white rounded shadow overflow-hidden hover:shadow-lg transition block">
+      <img src="{{ comic.image_url }}" alt="{{ comic.title }}" class="w-full h-40 object-cover">
+      <div class="p-2 text-sm font-medium text-gray-800">{{ comic.title }}</div>
+      <div class="px-2 pb-2 text-xs text-green-600">💚 {{ comic.likes }} 喜歡</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

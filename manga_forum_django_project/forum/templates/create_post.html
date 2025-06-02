@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}發文與投票{% endblock %}
+{% block content %}<!DOCTYPE html>
+<html lang="zh-TW">
+<head><meta charset="UTF-8"><title>發文與投票</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script></head>
+<body class="bg-gray-100"><main class="max-w-2xl mx-auto py-6 px-4">
+<h1 class="text-2xl font-bold mb-4">✍️ 發表新主題</h1>
+<form method="POST" class="bg-white shadow rounded-lg p-4 space-y-4">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {{ form.title.label_tag }} {{ form.title }}
+  {{ form.content.label_tag }} {{ form.content }}
+  <label>{{ form.anonymous }} 匿名發文</label>
+  {{ form.deadline.label_tag }} {{ form.deadline }}
+  <div x-data="{ options: [''] }" class="bg-gray-50 p-3 rounded">
+    <div class="flex justify-between items-center mb-2">
+      <span class="font-semibold text-sm">建立投票</span>
+      <button type="button" @click="options.push('')" class="text-blue-500 text-sm">＋ 增加選項</button>
+    </div>
+    <template x-for="(option, index) in options" :key="index">
+      <input type="text" name="options[]" x-model="options[index]" class="w-full mb-2 border px-3 py-1 rounded" placeholder="選項內容">
+    </template>
+  </div>
+  <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md font-semibold">發佈主題</button>
+</form></main></body></html>
+{% endblock %}

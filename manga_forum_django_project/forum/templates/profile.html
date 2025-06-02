@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}個人中心{% endblock %}
+{% block content %}
+<main class="max-w-5xl mx-auto py-6 px-4">
+  <!-- 使用者資訊 -->
+  <div class="bg-white shadow rounded-lg p-6 flex items-center gap-6 mb-6">
+    <img src="/static/images/profile.png" alt="使用者頭像" class="w-24 h-24 rounded-full object-cover">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-800">空-白幻</h1>
+      <p class="text-gray-500 text-sm">@ku-haku</p>
+    </div>
+  </div>
+
+  <!-- 收藏與瀏覽紀錄 -->
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- 收藏清單 -->
+    <div>
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">❤️ 收藏漫畫</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="/static/images/love.png" class="w-full h-40 object-cover">
+          <div class="p-2 text-sm text-center font-medium">全部收藏</div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="/static/images/fantasy.png" class="w-full h-40 object-cover">
+          <div class="p-2 text-sm text-center font-medium">科幻懸看</div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="/static/images/campus.png" class="w-full h-40 object-cover">
+          <div class="p-2 text-sm text-center font-medium">柯南</div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="/static/images/recommend.png" class="w-full h-40 object-cover">
+          <div class="p-2 text-sm text-center font-medium">推薦漫畫</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 瀏覽紀錄 -->
+    <div>
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">🕓 瀏覽紀錄</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-base font-bold">《名偵探柯南》終於結束連載</h3>
+          <p class="text-sm text-gray-600 mt-1">日本漫畫家青山剛昌筆下的推理漫畫作品…</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-base font-bold">《一拳超人第三季》宣布10月開播</h3>
+          <p class="text-sm text-gray-600 mt-1">由ONE 擔任原作、村田雄介繪製的漫畫…</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-base font-bold">一拳超人死了？</h3>
+          <p class="text-sm text-gray-600 mt-1">爆雷：在最新一話234中…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
